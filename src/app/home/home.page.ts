@@ -7,9 +7,36 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor() {
+    console.log("AppComponent: Constructor");
+  }
 
-  ngOnInit() {}
+  ngOnChanges(){
+    console.log("AppComponent: OnChanges");
+  }
+
+  ngOnInit() {
+    console.log("AppComponent: OnInit");
+  }
+
+  ngDoCheck(){
+    console.log("AppComponent: DoCheck");
+  }
+  ngAfterContentInit(){
+    console.log("AppComponent: AfterContentInit");
+  }
+  ngAfterContentChecked(){
+    console.log("AppComponent: AfterContentCkecked");
+  }
+  ngAfterViewInit(){
+    console.log("AppComponent: AfterViewInit");
+  }
+  ngAfterViewChecked(){
+    console.log("AppComponent: AfterViewChecked");
+  }
+  ngOnDestroy(){
+    console.log("AppComponent: OnDestroy");
+  }
 
   title: string='Mi nueva pagina';
 
@@ -17,28 +44,5 @@ export class HomePage {
   hazmeClic(): void{
     alert("hiciste click!");
   }
-  verdadero: boolean = false;
-  tarjetas = [
-    {
-      nombre: 'Maria Mercedez de la Cruz',
-      numero: 8753873878786556,
-      vigenciaInicio: '08',
-      vigenciaFin: '27',
-      CVV: '088'
-    },
-    {
-      nombre: 'Arturo Alejandro Arellano',
-      numero: 972697367191209,
-      vigenciaInicio: '08',
-      vigenciaFin: '27',
-      CVV: '088'
-    },
-    {
-      nombre: 'Cesar Daniel Morales',
-      numero: 29376938983917,
-      vigenciaInicio: '08',
-      vigenciaFin: '27',
-      CVV: '088'
-    }
-  ];
+  
 }
