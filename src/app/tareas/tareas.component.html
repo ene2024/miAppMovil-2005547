@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <p style="text-align: center; font-weight: bolder;">Agregar Tarea</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="tareaSelector">
+<ion-list>
+  <div class="elemento">
+  <ion-item>
+    <ion-textarea label="Nombre de la tarea"  labelPlacement="floating" id="nombre"></ion-textarea>
+  </ion-item>
+</div>
+  <p>Fecha estimada en que se completara:</p>
+  <div class="fecha">
+    <div class="selectores">
+      <ion-select aria-label="dia" placeholder="Dia" id="day">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+        <ion-select-option value="3">3</ion-select-option>
+        <ion-select-option value="4">4</ion-select-option>
+        <ion-select-option value="5">5</ion-select-option>
+        <ion-select-option value="6">6</ion-select-option>
+        <ion-select-option value="7">7</ion-select-option>
+        <ion-select-option value="8">8</ion-select-option>
+        <ion-select-option value="9">9</ion-select-option>
+        <ion-select-option value="10">10</ion-select-option>
+        <ion-select-option value="11">11</ion-select-option>
+        <ion-select-option value="12">12</ion-select-option>
+        <ion-select-option value="13">13</ion-select-option>
+        <ion-select-option value="14">14</ion-select-option>
+        <ion-select-option value="15">15</ion-select-option>
+        <ion-select-option value="16">16</ion-select-option>
+        <ion-select-option value="17">17</ion-select-option>
+        <ion-select-option value="18">18</ion-select-option>
+        <ion-select-option value="19">19</ion-select-option>
+        <ion-select-option value="20">20</ion-select-option>
+        <ion-select-option value="21">21</ion-select-option>
+        <ion-select-option value="22">22</ion-select-option>
+        <ion-select-option value="23">23</ion-select-option>
+        <ion-select-option value="24">24</ion-select-option>
+        <ion-select-option value="25">25</ion-select-option>
+        <ion-select-option value="26">26</ion-select-option>
+        <ion-select-option value="27">27</ion-select-option>
+        <ion-select-option value="28">28</ion-select-option>
+        <ion-select-option value="29">29</ion-select-option>
+        <ion-select-option value="30">30</ion-select-option>
+        <ion-select-option value="31">31</ion-select-option>
+      </ion-select>
+    </div>
+    <div class="selectores">
+      <ion-select aria-label="mes" placeholder="Mes" id="month">
+        <ion-select-option value="Enero">Enero</ion-select-option>
+        <ion-select-option value="Febrero">Febrero</ion-select-option>
+        <ion-select-option value="Marzo">Marzo</ion-select-option>
+        <ion-select-option value="Abril">Abril</ion-select-option>
+        <ion-select-option value="Mayo">Mayo</ion-select-option>
+        <ion-select-option value="Junio">Junio</ion-select-option>
+        <ion-select-option value="Julio">Julio</ion-select-option>
+        <ion-select-option value="Agosto">Agosto</ion-select-option>
+        <ion-select-option value="Septiembre">Septiembre</ion-select-option>
+        <ion-select-option value="Octubre">Octubre</ion-select-option>
+        <ion-select-option value="Noviembre">Noviembre</ion-select-option>
+        <ion-select-option value="Diciembre">Diciembre</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+  <div class="elemento">
+  <ion-item>
+    <ion-textarea label="Descripcion:"  labelPlacement="floating" [autoGrow]="true" id="details"></ion-textarea>
+  </ion-item>
+  </div>
+  <div style="padding-left: 40%; padding-right: 40%;">
+  <ion-button (click)="pasarInfo()">Agregar</ion-button>
+</div>
+</ion-list>
+</div>
