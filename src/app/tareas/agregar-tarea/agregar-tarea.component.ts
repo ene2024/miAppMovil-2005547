@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { Tarea } from 'tareas';
-import { TareasComponent } from '../tareas.component';
+import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-agregar-tarea',
   templateUrl: './agregar-tarea.component.html',
@@ -9,34 +7,10 @@ import { TareasComponent } from '../tareas.component';
 })
 export class AgregarTareaComponent  implements OnInit {
 
+  @Input() tarjetita:any
 
-
-  constructor(private modalCtrl: ModalController) { }
+  constructor() { }
 
   ngOnInit() {}
-
-  
-  tareaNueva: Tarea = {
-    nombre: '',
-    dia: '',
-    mes: '',
-    descripcion: ''
-  } 
-
-  tareas: Tarea[] = [];
-
-
-  async openModal() {
-    const modal = await this.modalCtrl.create({
-      component: TareasComponent,
-    });
-    modal.onDidDismiss().then((dataReturned) => {
-      this.tareaNueva=dataReturned.data;
-      console.log(this.tareaNueva);
-      this.tareas.push(this.tareaNueva)
-    });
-    return await modal.present();
-  }
-
 
 }
