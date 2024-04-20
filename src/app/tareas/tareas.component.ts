@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { Tarea } from 'tareas';
 import { Router } from '@angular/router';
-import { NgFor } from '@angular/common';
+import { ModalController } from '@ionic/angular';
 interface tarjeta{
-  Nombre: string, // @ts-ignore: Name is possibly 'null'
-  Mes: String,
-  Dia: String,
-  Detalles: String,
+  "Nombre": string, 
+  "Mes": String,
+  "Dia": String,
+  "Detalles": String,
 }
-let tarjetita: tarjeta[] = [];
-const Name = document.getElementById("nombre")!;
-const Month = document.getElementById("month")!;
-const Day = document.getElementById("day")!;
-const Details = document.getElementById("details")!;
+
 @Component({
   selector: 'app-tareas',
   templateUrl: './tareas.component.html',
@@ -19,23 +17,25 @@ const Details = document.getElementById("details")!;
 })
 export class TareasComponent  {
 
-  pasarInfo() {
-    this.router.navigate(['/agregarTarea']);
-    
-    const nueva: tarjeta =
-    {
-     Nombre: Name.innerHTML,
-     Mes: Month.innerHTML,
-     Dia: Day.innerHTML,
-     Detalles: Details.innerHTML
-    }
-    tarjetita.push(nueva);
-    
-  }
 
-  constructor(public router: Router) { }
+  constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {}
 
+  isModalOpen= false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+  
+  nuevaTarea: Tarea = {
+    nombre: '',
+    dia: '',
+    mes: '',
+    descripcion: ''
+  } 
+
+  agregarTarea(){
+    this.modalCtrl.dismiss(this.nuevaTarea);
  
-}
+}}

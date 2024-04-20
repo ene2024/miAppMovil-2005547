@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { TareasComponent } from './tareas/tareas.component';
-import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
+import { AgregarTareaComponent } from './tareas/agregar-tarea/agregar-tarea.component';
 const routes: Routes = [
   {
     path: 'tareas', component: TareasComponent

@@ -1,0 +1,30 @@
+
+<ion-content>
+ 
+
+  <ion-card *ngFor="let tareas of tareas">
+    <h1>{{tareaNueva.nombre}}</h1>
+    <ion-row>
+      <ion-textarea>{{tareaNueva.descripcion}}</ion-textarea>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col>
+        <h2>Fecha</h2>
+      </ion-col>
+      <ion-col>
+        <p>{{tareaNueva.dia}}/{{tareaNueva.mes}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-card-content id="base">
+      <h3>+ Ver mas detalles</h3>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="openModal()">+</ion-fab-button>
+  </ion-fab>
+</ion-content>

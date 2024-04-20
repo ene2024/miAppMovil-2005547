@@ -6,16 +6,17 @@
   </ion-toolbar>
 </ion-header>
 <div class="tareaSelector">
-<ion-list>
+<form #nuevaTareaForm="ngForm">
   <div class="elemento">
   <ion-item>
-    <ion-textarea label="Nombre de la tarea"  labelPlacement="floating" id="nombre"></ion-textarea>
+    <ion-label position="floating">Nombre de la tarea</ion-label>
+    <ion-input aria-label="Nombre" name="nombre"  type="text" [(ngModel)]="nuevaTarea.nombre" required></ion-input>
   </ion-item>
 </div>
   <p>Fecha estimada en que se completara:</p>
   <div class="fecha">
     <div class="selectores">
-      <ion-select aria-label="dia" placeholder="Dia" id="day">
+      <ion-select aria-label="dia" placeholder="Dia" name="dia" [(ngModel)]="nuevaTarea.dia" required>
         <ion-select-option value="1">1</ion-select-option>
         <ion-select-option value="2">2</ion-select-option>
         <ion-select-option value="3">3</ion-select-option>
@@ -50,29 +51,29 @@
       </ion-select>
     </div>
     <div class="selectores">
-      <ion-select aria-label="mes" placeholder="Mes" id="month">
-        <ion-select-option value="Enero">Enero</ion-select-option>
-        <ion-select-option value="Febrero">Febrero</ion-select-option>
-        <ion-select-option value="Marzo">Marzo</ion-select-option>
-        <ion-select-option value="Abril">Abril</ion-select-option>
-        <ion-select-option value="Mayo">Mayo</ion-select-option>
-        <ion-select-option value="Junio">Junio</ion-select-option>
-        <ion-select-option value="Julio">Julio</ion-select-option>
-        <ion-select-option value="Agosto">Agosto</ion-select-option>
-        <ion-select-option value="Septiembre">Septiembre</ion-select-option>
-        <ion-select-option value="Octubre">Octubre</ion-select-option>
-        <ion-select-option value="Noviembre">Noviembre</ion-select-option>
-        <ion-select-option value="Diciembre">Diciembre</ion-select-option>
+      <ion-select aria-label="mes" placeholder="Mes" name="mes" [(ngModel)]="nuevaTarea.mes" required>
+        <ion-select-option value="01">Enero</ion-select-option>
+        <ion-select-option value="02">Febrero</ion-select-option>
+        <ion-select-option value="03">Marzo</ion-select-option>
+        <ion-select-option value="04">Abril</ion-select-option>
+        <ion-select-option value="05">Mayo</ion-select-option>
+        <ion-select-option value="06">Junio</ion-select-option>
+        <ion-select-option value="07">Julio</ion-select-option>
+        <ion-select-option value="08">Agosto</ion-select-option>
+        <ion-select-option value="09">Septiembre</ion-select-option>
+        <ion-select-option value="10">Octubre</ion-select-option>
+        <ion-select-option value="11">Noviembre</ion-select-option>
+        <ion-select-option value="12">Diciembre</ion-select-option>
       </ion-select>
     </div>
   </div>
   <div class="elemento">
   <ion-item>
-    <ion-textarea label="Descripcion:"  labelPlacement="floating" [autoGrow]="true" id="details"></ion-textarea>
+    <ion-textarea name="descripcion" aria-label="Descripcion:"  labelPlacement="floating" [autoGrow]="true" [(ngModel)]="nuevaTarea.descripcion" required></ion-textarea>
   </ion-item>
   </div>
   <div style="padding-left: 40%; padding-right: 40%;">
-  <ion-button (click)="pasarInfo()">Agregar</ion-button>
+  <ion-button (click)="agregarTarea()">Agregar</ion-button>
 </div>
-</ion-list>
+</form>
 </div>
