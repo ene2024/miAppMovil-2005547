@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { Component, OnInit, Input} from '@angular/core';
+
+import { Tarea } from 'tareas';
+import { AgregarTareasService } from 'src/app/agregar-tareas.service.spec';
+
 @Component({
   selector: 'app-agregar-tarea',
   templateUrl: './agregar-tarea.component.html',
@@ -7,10 +10,29 @@ import { NgFor } from '@angular/common';
 })
 export class AgregarTareaComponent  implements OnInit {
 
-  @Input() tarjetita:any
+  constructor(private tareaServicio: AgregarTareasService) { }
 
-  constructor() { }
+  tareaServicioArray: Tarea[] = this.tareaServicio.tareas;
 
   ngOnInit() {}
+
+  @Input() tareaTitulo: string = '';
+
+
+  tareaNombre: string = '';
+
+  nuevaTarea: Tarea = {
+    nombre: '',
+    dia: 5,
+    mes: 12,
+    descripcion: '' 
+  }
+
+ 
+  submit(): void{
+    this.tareaServicioArray.push(this.nuevaTarea);
+    this.tareaServicio.agregarTarea(this.nuevaTarea);
+
+  }
 
 }

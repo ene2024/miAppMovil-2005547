@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tareas',
+    redirectTo: 'agregarTarea',
     pathMatch: 'full'
   },
 ];
