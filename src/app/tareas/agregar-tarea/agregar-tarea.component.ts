@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Tarea } from 'tareas';
 import { AgregarTareasService } from 'src/app/agregar-tareas.service.spec';
 
@@ -10,16 +10,14 @@ import { AgregarTareasService } from 'src/app/agregar-tareas.service.spec';
 })
 export class AgregarTareaComponent  implements OnInit {
 
-  constructor(private tareaServicio: AgregarTareasService) { }
+  constructor(private tareaServicio: AgregarTareasService, public router: Router ) { }
 
   tareaServicioArray: Tarea[] = this.tareaServicio.tareas;
 
   ngOnInit() {}
 
-  @Input() tareaTitulo: string = '';
 
 
-  tareaNombre: string = '';
 
   nuevaTarea: Tarea = {
     nombre: '',
@@ -30,9 +28,10 @@ export class AgregarTareaComponent  implements OnInit {
 
  
   submit(): void{
-    this.tareaServicioArray.push(this.nuevaTarea);
     this.tareaServicio.agregarTarea(this.nuevaTarea);
 
   }
-
+  goToPage(pageName:string){
+    this.router.navigate([`${pageName}`]);
+  }
 }

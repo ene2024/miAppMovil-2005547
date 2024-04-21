@@ -1,22 +1,12 @@
-<p>
-
-
-  <ion-card *ngFor="let tarea of tareaServicioArray">
-    <ion-card-title>{{tarea.nombre}}</ion-card-title>
-    <ion-card-content>
-      <p><strong>Fecha: </strong> Tarea {{tarea.dia}}/{{tarea.mes}}</p>
-      <ion-button>+ Ver más detalles</ion-button>
-    </ion-card-content>
-  </ion-card>
-
-</p>
-
 
 <ion-fab slot="fixed" vertical="bottom" horizontal="end">
   <ion-fab-button id="agregarBtn">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>
+<ion-button (click)="router.navigate(['/tareas']);">
+  <span>Ver Tareas Agregadas</span>
+</ion-button>
 
 <ion-modal trigger="agregarBtn"> 
   <ng-template>
@@ -24,7 +14,7 @@
     
     <form #agregarTareaForm="ngForm">
       <div>
-        <ion-label>Nombre de la tarea: {{tareaNombre}}</ion-label>
+        <ion-label>Nombre de la tarea:</ion-label>
         <ion-input required id="tareaNombre" nombre="tareaNombre" [(ngModel)]="nuevaTarea.nombre" name="tareaNombre"></ion-input>
       </div>
       
