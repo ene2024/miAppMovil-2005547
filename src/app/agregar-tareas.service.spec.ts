@@ -17,6 +17,8 @@ export class AgregarTareasService {
   agregarTarea(tareaNueva: Tarea){
 
     this.tareas.push(tareaNueva);
-    //Agrega una Tarea al Arreglo
+  }
+  deleteTarea(id: number){
+    this.tareas.splice(id, 1);
   }
 }

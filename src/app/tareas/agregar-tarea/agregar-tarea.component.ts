@@ -21,15 +21,14 @@ export class AgregarTareaComponent  implements OnInit {
 
   nuevaTarea: Tarea = {
     nombre: '',
-    dia: 5,
-    mes: 12,
+    dia: '',
+    mes: '',
     descripcion: '' 
   }
 
  
   submit(): void{
     this.tareaServicio.agregarTarea(this.nuevaTarea);
-
   }
   goToPage(pageName:string){
     this.router.navigate([`${pageName}`]);

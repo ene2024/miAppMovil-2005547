@@ -17,6 +17,10 @@ export class TareasComponent  implements OnInit {
     this.router.navigate([`${pageName}`]);
   }
 
+  eliminarTarea(pst: number){
+    this.tareaServicio.deleteTarea(pst);
+  }
+
   ngOnInit() {}
 
 }
