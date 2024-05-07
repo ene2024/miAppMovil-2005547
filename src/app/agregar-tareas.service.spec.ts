@@ -7,6 +7,7 @@ export class AgregarTareasService {
 
   constructor() { }
 
+  indice=0;
   tareas : Tarea[] = [];
 
   getTareas() {
@@ -21,4 +22,5 @@ export class AgregarTareasService {
   deleteTarea(id: number){
     this.tareas.splice(id, 1);
   }
+  
 }

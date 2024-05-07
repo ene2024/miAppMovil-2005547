@@ -4,7 +4,9 @@
 
 
   <ion-card *ngFor="let tarea of tareaServicioArray; let i = index">
-    <ion-card-title>{{tarea.nombre}}</ion-card-title>
+    <ion-card-title>
+      <a routerLink="/vistaTareas" (click)="vistaTareas(i)">{{tarea.nombre}}</a>
+    </ion-card-title>
     <ion-card-content>
       <ion-accordion-group>
     <ion-accordion value="first">
