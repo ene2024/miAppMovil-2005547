@@ -1,0 +1,30 @@
+<link rel="shortcut icon" href="#">
+
+<p>
+
+
+  <ion-card *ngFor="let tarea of tareaServicioArray; let i = index">
+    <ion-card-title>
+      <a routerLink="/vistaTareas" (click)="vistaTareas(i)">{{tarea.nombre}}</a>
+    </ion-card-title>
+    <ion-card-content>
+      <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Ver mas Detalles</ion-label>
+      </ion-item>
+   <div slot="content">
+      <p><strong>Fecha: </strong> Cierra el {{tarea.dia}}/{{tarea.mes}}</p>
+      <p>Descipcion: {{tarea.descripcion}}</p>
+    </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  <ion-button (click)="eliminarTarea(i)">Eliminar esta tarea</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</p>
+
+<ion-button (click)="router.navigate(['/agregarTarea']);">
+  <span>Añadir una nueva Tarea</span>
+</ion-button>

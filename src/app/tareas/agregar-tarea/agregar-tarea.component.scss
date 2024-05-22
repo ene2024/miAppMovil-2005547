@@ -1,0 +1,40 @@
+ion-card{
+    --background: white;
+    --color: black;
+}
+
+
+ion-card-title {
+    padding: 10px;
+    --color: #BB27A7;
+    font-weight: 700;
+}
+
+ion-button {
+    --background: #D9D9D9;
+    --color: #BB27A7;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.submit{
+    --background: blue;
+    --color: black;
+    border: 4px black;
+}
+ion-fab-button {
+    --background: blue;
+    --color: black;
+    font-weight: 900;
+    border: 4px black;
+    border-radius: 120px;
+}
+
+ion-modal *{
+   
+    font-weight: 700;
+}
+
+ion-input {
+    border: solid 2px black;
+}

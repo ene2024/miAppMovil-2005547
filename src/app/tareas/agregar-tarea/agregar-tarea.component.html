@@ -1,0 +1,88 @@
+
+<ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button id="agregarBtn">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-button (click)="router.navigate(['/tareas']);">
+  <span>Ver Tareas Agregadas</span>
+</ion-button>
+
+<ion-modal trigger="agregarBtn"> 
+  <ng-template>
+    <p>Agregar tarea</p>
+    
+    <form #agregarTareaForm="ngForm">
+      <div>
+        <ion-label>Nombre de la tarea:</ion-label>
+        <ion-input required id="tareaNombre" nombre="tareaNombre" [(ngModel)]="nuevaTarea.nombre" name="tareaNombre"></ion-input>
+      </div>
+      
+      <div>
+        
+        <ion-label>Fecha Dia: </ion-label>
+        <ion-select  [(ngModel)]="nuevaTarea.dia">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+          <ion-select-option value="6">6</ion-select-option>
+          <ion-select-option value="7">7</ion-select-option>
+          <ion-select-option value="8">8</ion-select-option>
+          <ion-select-option value="9">9</ion-select-option>
+          <ion-select-option value="10">10</ion-select-option>
+          <ion-select-option value="11">11</ion-select-option>
+          <ion-select-option value="12">12</ion-select-option>
+          <ion-select-option value="13">13</ion-select-option>
+          <ion-select-option value="14">14</ion-select-option>
+          <ion-select-option value="15">15</ion-select-option>
+          <ion-select-option value="16">16</ion-select-option>
+          <ion-select-option value="17">17</ion-select-option>
+          <ion-select-option value="18">18</ion-select-option>
+          <ion-select-option value="19">19</ion-select-option>
+          <ion-select-option value="20">20</ion-select-option>
+          <ion-select-option value="21">21</ion-select-option>
+          <ion-select-option value="22">22</ion-select-option>
+          <ion-select-option value="23">23</ion-select-option>
+          <ion-select-option value="24">24</ion-select-option>
+          <ion-select-option value="25">25</ion-select-option>
+          <ion-select-option value="26">26</ion-select-option>
+          <ion-select-option value="27">27</ion-select-option>
+          <ion-select-option value="28">28</ion-select-option>
+          <ion-select-option value="29">29</ion-select-option>
+          <ion-select-option value="30">30</ion-select-option>
+          <ion-select-option value="31">31</ion-select-option>
+        </ion-select>
+        
+      </div>
+      
+      <div>
+        
+        <ion-label>Fecha Mes: </ion-label>
+        <ion-select [(ngModel)]="nuevaTarea.mes">
+          <ion-select-option value="01">Enero</ion-select-option>
+          <ion-select-option value="02">Febrero</ion-select-option>
+          <ion-select-option value="03">Marzo</ion-select-option>
+          <ion-select-option value="04">Abril</ion-select-option>
+          <ion-select-option value="05">Mayo</ion-select-option>
+          <ion-select-option value="06">Junio</ion-select-option>
+          <ion-select-option value="07">Julio</ion-select-option>
+          <ion-select-option value="08">Agosto</ion-select-option>
+          <ion-select-option value="09">Septiembre</ion-select-option>
+          <ion-select-option value="10">Octubre</ion-select-option>
+          <ion-select-option value="11"> Noviembre </ion-select-option>
+          <ion-select-option value="12">Diciembre</ion-select-option>
+        </ion-select>
+        
+      </div>
+      
+      <div>
+        <ion-label>Descripcion de la tarea:</ion-label>
+        <ion-input name="descripcionTarea" required id="descripcionTarea" [(ngModel)]="nuevaTarea.descripcion"></ion-input>
+      </div>
+      
+      <ion-button [disabled]="!agregarTareaForm.valid" (click)="submit()" class="submit">Agregar tarea</ion-button>
+    </form>
+  </ng-template>
+</ion-modal>
