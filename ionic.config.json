@@ -1,5 +1,7 @@
 {
-  "name": "miAppMovil-2005547",
-  "integrations": {},
+  "name": "instafake",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

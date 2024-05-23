@@ -1,0 +1,24 @@
+<ion-grid
+  *ngIf="mostrarImagenes; else alternativa"
+  [fixed]="true"
+  class="tabla">
+    <ion-row
+      *ngFor="let fila of listaImagenes; index as numeroFila"
+      [class]="'tabla__' + 'fila-' + numeroFila"
+    >
+      <ion-col *ngFor="let imagen of fila; index as numeroImagen" size=4>
+        <ion-thumbnail class="publicacion" [routerLink]="['/detallePublicacion', numeroImagen]">
+
+          <ion-img
+            class="publicacion-imagen"
+            [src]="imagen"
+            [class]="'tabla__' + 'imagen-' + numeroFila + ',' + numeroImagen"
+          />
+        </ion-thumbnail>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+
+<ng-template #alternativa>
+  <div style="color: black;"> No hay nada por aqui... </div>
+</ng-template>
